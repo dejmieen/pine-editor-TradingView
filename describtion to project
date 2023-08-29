@@ -1,0 +1,5 @@
+i want to merge those two scripts i want to add condions for long and short entry singals : i want to print 
+long signal  when price is bellow 50 moving average and when price is bellow 30 in rsi , 
+for short signal when price is above 50 moving average and when price is above 70 in rsi
+
+can someone help me with this?
