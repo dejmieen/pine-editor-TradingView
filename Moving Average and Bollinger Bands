@@ -1,0 +1,22 @@
+//@version=5
+indicator(title='Moving Average and Bollinger Bands', shorttitle='MA BB', overlay=true)
+
+// Input parameters
+length = input(50, title='Moving Average Length')
+src = input(close, title='Source')
+
+// Calculate moving average
+ma = ta.sma(src, length)
+
+// Bollinger Bands
+bb_length = input(20, title='Bollinger Bands Length')
+bb_mult = input(2, title='Bollinger Bands Standard Deviation')
+basis = ta.sma(src, bb_length)
+dev = bb_mult * ta.stdev(src, bb_length)
+upperBB = basis + dev
+lowerBB = basis - dev
+
+// Plotting moving average and Bollinger Bands on the chart
+plot(ma, title='50 MA', color=color.new(color.blue, 0))
+plot(upperBB, title='Upper BB', color=color.new(color.gray, 0))
+plot(lowerBB, title='Lower BB', color=color.new(color.gray, 0))
